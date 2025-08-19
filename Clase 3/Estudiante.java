@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Estudiante {
     //atributos
     private int id;
@@ -13,6 +15,13 @@ public class Estudiante {
         this.nombre = nombre;
         this.facultad = facultad;
 
+    }
+
+    //Metodo matricular cursos
+    public void matricularCursos(String[] cursos) {
+
+        System.out.println(Arrays.toString(cursos));
+        
     }
 
     //Metodo toString
