@@ -1,4 +1,4 @@
-Public class Estudiante {
+public class Estudiante {
     //atributos
     private int id;
     private int cedula;
