@@ -26,6 +26,6 @@ public class Estudiante {
 
     //Metodo toString
     public String toString() {
-        return "Estudiante: [id: " + id + "cedula: " + cedula + "Nombre: " + nombre + "facultad: " + facultad + " ] ";
+        return "Estudiante: [id: " + id + " cedula: " + cedula + " Nombre: " + nombre + " Facultad: " + facultad + " ] ";
     }
 }
