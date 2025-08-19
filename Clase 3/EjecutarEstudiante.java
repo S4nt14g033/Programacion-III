@@ -23,5 +23,8 @@ public class EjecutarEstudiante {
         e[3] = new Estudiante(4, 100894094, "Peter", "ingenieria");
 
         System.out.println(Arrays.toString(e));
+
+        //tarea
+        // implementar el metodo matricular cursos para que cada estudiantes pueda realizar dicha operacion
     }
 }
