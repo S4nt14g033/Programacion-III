@@ -6,6 +6,7 @@ public class Estudiante {
     private int cedula;
     private String nombre;
     private String facultad;
+    private Matricula matricula;
 
     //constructor
     public Estudiante(int id, int cedula, String nombre, String facultad) {
@@ -19,13 +20,21 @@ public class Estudiante {
 
     //Metodo matricular cursos
     public void matricularCursos(String[] cursos) {
-
+        this.matricula = new Matricula(this.id, cursos);
         System.out.println(Arrays.toString(cursos));
         
     }
 
+     //obtener matricula
+    public Matricula obtMatricula() {
+        return this.matricula;
+    }
+
     //Metodo toString
     public String toString() {
-        return "Estudiante: [id: " + id + " cedula: " + cedula + " Nombre: " + nombre + " Facultad: " + facultad + " ] ";
+        return "Estudiante: [id: " + id + " cedula: " + cedula + " Nombre: " + nombre + " Facultad: " + facultad +  
+        (matricula != null ? " " + matricula : "") +" ] ";
     }
+
+   
 }
