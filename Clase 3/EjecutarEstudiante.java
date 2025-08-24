@@ -31,9 +31,9 @@ public class EjecutarEstudiante {
 
         e[3].matricularCursos(new String[] {"Calculo", "Algebra", "Fisica"});
 
-        System.out.println(Arrays.toString(e));
+        System.out.println(Arrays.toString(e)); //imprime los estudiantes
 
-       
-        
+        //tarea
+        // implementar el metodo matricular cursos para que cada estudiantes pueda realizar dicha operacion
     }
 }

@@ -21,7 +21,7 @@ public class Estudiante {
     //Metodo matricular cursos
     public void matricularCursos(String[] cursos) {
         this.matricula = new Matricula(this.id, cursos);
-        System.out.println(Arrays.toString(cursos));
+        System.out.println(Arrays.toString(cursos));//imprime los cursos de cada estudiante
         
     }
 
