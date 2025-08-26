@@ -15,9 +15,7 @@ public class EjecutarEstudiante {
         System.out.println(objEst3);*/
 
         //matricular cursos
-        objEst1.matricularCursos(new String[] {"Matematicas", "Ingles", "Programacion"});
-        objEst2.matricularCursos(new String[] {"Biologia", "Quimica", "Anatomia"});
-        objEst3.matricularCursos(new String[] {"Historia", "Geografia", "Literatura"});
+        
         
 
         //creacion arreglo de objetos (Estudiantes)
@@ -29,11 +27,16 @@ public class EjecutarEstudiante {
         e[2] = objEst3;
         e[3] = new Estudiante(4, 100894094, "Peter", "ingenieria");
 
+         //tarea
+        // implementar el metodo matricular cursos para que cada estudiantes pueda realizar dicha operacion 
+        
+        objEst1.matricularCursos(new String[] {"Matematicas", "Ingles", "Programacion"});
+        objEst2.matricularCursos(new String[] {"Biologia", "Quimica", "Anatomia"});
+        objEst3.matricularCursos(new String[] {"Historia", "Geografia", "Literatura"});
         e[3].matricularCursos(new String[] {"Calculo", "Algebra", "Fisica"});
 
         System.out.println(Arrays.toString(e)); //imprime los estudiantes
 
-        //tarea
-        // implementar el metodo matricular cursos para que cada estudiantes pueda realizar dicha operacion
+       
     }
 }

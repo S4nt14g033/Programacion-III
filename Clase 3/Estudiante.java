@@ -18,6 +18,9 @@ public class Estudiante {
 
     }
 
+     //tarea
+        // implementar el metodo matricular cursos para que cada estudiantes pueda realizar dicha operacion
+        
     //Metodo matricular cursos
     public void matricularCursos(String[] cursos) {
         this.matricula = new Matricula(this.id, cursos);
