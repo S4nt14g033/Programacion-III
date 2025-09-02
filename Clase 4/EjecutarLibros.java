@@ -5,7 +5,7 @@ public class EjecutarLibros {
      public static void main(String[] args) {
         Libros libro1 = new Libros("Cien Años de Soledad", "Gabriel Garcia Marquez", 30000);
         Libros libro2 = new Libros("1984", "George Orwell", 25000);
-        Libros libro3 = new Libros("El Principito", "Antoine de Saint-Exupéry", 20000);
+        Libros libro3 = new Libros("El Principito", "Antoine de Saint-Exupéry", 25000);
         Libros libro4 = new Libros("El Alquimista", "Paulo Coelho", 28000);
         Libros libro5 = new Libros("Don Quijote de la Mancha", "Miguel de Cervantes", 35000);
 
@@ -27,11 +27,16 @@ public class EjecutarLibros {
         libros[3] = libro4;
         libros[4] = libro5;
 
-        System.out.print("libros sobre ");
-        libros[0].FiltroLibros(libros);
-        System.out.println("el total de los libros es: " + libros[0].calcularPrecio(libros));
 
-        //implementar lo que falta
+
+        /*System.out.println("Libros con precio mayor a 15550: ");
+        libros[0].FiltroLibros(libros,15000);*/
+
+        libros[0].ordenar(libros);
+        System.out.println("\n Libros ordenados por precio: ");
+        for (Libros libro: libros) {
+            System.out.println(libro);
+        }
     }
     
 }
