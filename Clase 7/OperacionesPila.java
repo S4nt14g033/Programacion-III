@@ -29,5 +29,10 @@ public class OperacionesPila {
             pilasignos.pop();
         }
         return cont1 == cont2 ? true: false;
+
+        /*Tarea
+         * implementar los metodos de la clase vector
+         * realizar ejemplos para validar su funcionamiento
+         */
     }
 }
