@@ -23,6 +23,26 @@ public class Pila {
 
          //imprimir la pila
          System.out.println(pila);
+
+
+         //buscar y mostrar la posicion del elemento dentro de la pila
+
+         System.out.println(pila.search(4 ));
+         System.out.println(pila.search(9));
+         System.out.println(pila.search(8));
+         System.out.println(pila.search(10));
+         System.out.println(pila.search(50));
+
+         //verificar si la pila esta vacia
+         System.out.println(pila.empty()); //false
+
+         //lamar el metodo para validar los parentesis
+
+         OperacionesPila objOp = new OperacionesPila();
+
+         String[] signos = {"(","(",")",")"};
+
+         System.out.println(objOp.validarParentesis(signos));
     }
     
 }
