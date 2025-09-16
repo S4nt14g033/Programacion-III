@@ -33,6 +33,7 @@ public class OperacionesPila {
         /*Tarea
          * implementar los metodos de la clase vector
          * realizar ejemplos para validar su funcionamiento
+         * todos los elementos
          */
     }
 }
