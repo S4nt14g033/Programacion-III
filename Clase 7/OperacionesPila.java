@@ -28,9 +28,6 @@ public class OperacionesPila {
             }
             pilasignos.pop();
         }
-
-        flag = (cont1 == cont2 ? true: false);
-
-        return flag;
+        return cont1 == cont2 ? true: false;
     }
 }
