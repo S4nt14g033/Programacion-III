@@ -2,7 +2,7 @@ import java.util.*;
 
 public class nombres {
     
-    public static String nombres(List<String> nombres){
+    public static String nombre(List<String> nombres){
         Queue<String> cola = new LinkedList<>(nombres);
         List<Character> iniciales = new ArrayList<>();
 
@@ -26,12 +26,12 @@ public class nombres {
 
     public static void main(String[] args) {
         List<String> ejemplo1 = Arrays.asList("Adam", "Sarah", "Malcolm");
-        System.out.println(nombres(ejemplo1));
+        System.out.println(nombre(ejemplo1));
 
         List<String> ejemplo2 = Arrays.asList("bruce", "clark", "diana");
-        System.out.println(nombres(ejemplo2));
+        System.out.println(nombre(ejemplo2));
 
         List<String> ejemplo3 = Arrays.asList("Zoe", "anna", "leo");
-        System.out.println(nombres(ejemplo3)); 
+        System.out.println(nombre(ejemplo3)); 
     }
 }
