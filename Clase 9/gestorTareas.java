@@ -38,6 +38,7 @@ public void procesarTareaPrioridad(){
     } else {
         System.out.println("No hay tareas de prioridad alta en la fila.");
     }
+}
 
 
 

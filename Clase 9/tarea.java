@@ -23,7 +23,8 @@ public class tarea {
         return prioridad;
     }
 
-    public String ConsultarEstadoTarea(){
-        return "Tarea [id: " + id + ", descripcion: " + descripcion + ", prioridad: " + prioridad + "]";
+    //metodo para consultar el estado de la tarea
+    public String ConsultarEstadoTarea() {
+        return "ID: " + id + ", Descripcion: " + descripcion + ", Prioridad: " + prioridad;
     }
 }
