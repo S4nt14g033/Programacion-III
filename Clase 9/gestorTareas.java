@@ -15,28 +15,43 @@ public class gestorTareas {
     this.filaPrioridad = new Stack<>();
     this.tareasCompletadas = new java.util.HashMap<>();
     }
-}
 
+    //agregar tarea a la fila de espera
+    public void agregarTarea(tarea nuevaTarea){
 
- //agregar tarea a la fila de espera
-public void agregarTarea(tarea nuevaTarea){
+        if (nuevaTarea.getPrioridad() == 3) {
+            filaPrioridad.push(nuevaTarea);
+        } else {
+            filaEspera.add(nuevaTarea);
 
-    if (tarea.getPrioridad() == 3) {
-        filaPrioridad.push(nuevaTarea);
-    } else {
-        filaEspera.add(nuevaTarea);
-        
+        }
     }
-}
 
-//procesar tarea de la fila de prioridad
-public void procesarTareaPrioridad(){
-    if (!filaPrioridad.isEmpty()) {
-        tarea tareaProcesada = filaPrioridad.pop();
-        tareasCompletadas.put(tareaProcesada.getId(), tareaProcesada);
-        System.out.println("Tarea procesada de prioridad alta: " + tareaProcesada.ConsultarEstadoTarea());
-    } else {
-        System.out.println("No hay tareas de prioridad alta en la fila.");
+    //procesar tarea de la fila de prioridad
+    public void procesarTareaPrioridad(){
+        if (!filaPrioridad.isEmpty()) {
+            tarea tareaProcesada = filaPrioridad.pop();
+            tareasCompletadas.put(tareaProcesada.getId(), tareaProcesada);
+            System.out.println("Tarea procesada de prioridad alta: " + tareaProcesada.ConsultarEstadoTarea());
+        } else {
+            System.out.println("No hay tareas de prioridad alta en la fila.");
+        }
+    }
+
+    //mostrar estado de las tareas
+    public void mostrarEstadoTareas(){
+        System.out.println("Tareas en fila de espera:");
+        for (tarea t : filaEspera) {
+            System.out.println(t.ConsultarEstadoTarea());
+        }
+        System.out.println("Tareas en fila de prioridad:");
+        for (tarea t : filaPrioridad) {
+            System.out.println(t.ConsultarEstadoTarea());
+        }
+        System.out.println("Tareas completadas:");
+        for (tarea t : tareasCompletadas.values()) {
+            System.out.println(t.ConsultarEstadoTarea());
+        }
     }
 }
 
