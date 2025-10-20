@@ -88,17 +88,19 @@ public class ExamenColaMapa {
 
         public static void main(String[] args){
             Scanner sc = new Scanner(System.in);
-            System.out.println("Ingrese una cadena de parentesis:");
+            System.out.println("Ingrese una cadena de parentesis: ");
             String cadena = sc.nextLine();
             System.out.println("Balance de cola: " + balanceConCola(cadena));
 
             Map<String, Integer> intentos = new HashMap<String,Integer>();
             System.out.println("Intentos de Ana: " + registrarIntento(intentos, "Ana"));
             System.out.println("Intentos de Ana: " + registrarIntento(intentos, "Ana"));
+            System.out.println("Intentos de Beto: " + registrarIntento(intentos, "Beto"));
 
             sc.close();
         }
     }  
+
 
 
 
