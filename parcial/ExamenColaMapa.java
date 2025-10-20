@@ -88,6 +88,7 @@ public class ExamenColaMapa {
 
         public static void main(String[] args){
             Scanner sc = new Scanner(System.in);
+            System.out.println("Ingrese una cadena de parentesis:");
             String cadena = sc.nextLine();
             System.out.println("Balance de cola: " + balanceConCola(cadena));
 
