@@ -77,9 +77,9 @@
         }
     //decide si insertar a la izquierda o derecha
         if (valor < nodo.getValor()) {
-            nodo.setHijoIzquierdo(insertarValor(nodo.getizquierda(), valor));
+            nodo.setizquierda(nodo);(insertarValor(nodo.getizquierda(), valor));
         } else if (valor > nodo.getValor()) {
-            nodo.setHijoDerecho(insertarValor(nodo.getderecha(), valor));
+            nodo.setderecha(insertarValor(nodo.getderecha(), valor));
         }
         return nodo;
     }
