@@ -139,6 +139,9 @@ public class Dijkstra {
         // Conjunto de nodos visitados
         Set<String> visitado = new HashSet<>();
         // Cola de prioridad: ordena por distancia
+        // Comparator.comparingInt(NodoDistancia::getDistancia) ordena los nodos por su distancia (de menor a mayor)
+        // Los :: son "method reference": forma corta de decir "usa el método getDistancia para comparar"
+        // Es como escribir: (a, b) -> a.getDistancia() - b.getDistancia()
         PriorityQueue<NodoDistancia> colaPrioridad = new PriorityQueue<>(Comparator.comparingInt(NodoDistancia::getDistancia));
 
         // Inicializar distancias: infinito para todos, 0 para origen
@@ -148,24 +151,28 @@ public class Dijkstra {
         distancia.put(origen, 0);
         colaPrioridad.add(new NodoDistancia(origen, 0));
 
-        // Bucle principal: procesar nodos
+        // Bucle principal: procesar nodos en orden de distancia creciente
+        // La cola de prioridad asegura que siempre sacamos el nodo con la distancia más pequeña conocida
         while (!colaPrioridad.isEmpty()) {
+            // Sacar el nodo con la distancia más pequeña de la cola
             NodoDistancia actual = colaPrioridad.poll();
             String nodoActual = actual.getNodo();
 
+            // Si ya visitamos este nodo, saltar (puede haber entradas duplicadas en la cola)
             if (visitado.contains(nodoActual)) continue;
-            visitado.add(nodoActual);
+            visitado.add(nodoActual); // Marcar como visitado
 
-            // Revisar vecinos
+            // Revisar cada vecino conectado al nodo actual
             for (Grafo.Arista arista : grafo.obtenerListaAdyacencia().get(nodoActual)) {
-                String vecino = arista.getDestino();
-                int peso = arista.getPeso();
-                int nuevaDistancia = distancia.get(nodoActual) + peso;
+                String vecino = arista.getDestino(); // Ciudad vecina
+                int peso = arista.getPeso(); // Distancia entre nodoActual y vecino
+                int nuevaDistancia = distancia.get(nodoActual) + peso; // Distancia total al vecino pasando por nodoActual
 
+                // Si esta nueva ruta es más corta que la distancia conocida al vecino, actualizar
                 if (nuevaDistancia < distancia.get(vecino)) {
-                    distancia.put(vecino, nuevaDistancia);
-                    anterior.put(vecino, nodoActual);
-                    colaPrioridad.add(new NodoDistancia(vecino, nuevaDistancia));
+                    distancia.put(vecino, nuevaDistancia); // Actualizar distancia mínima
+                    anterior.put(vecino, nodoActual); // Recordar el nodo anterior para reconstruir camino
+                    colaPrioridad.add(new NodoDistancia(vecino, nuevaDistancia)); // Agregar vecino a la cola con nueva distancia
                 }
             }
         }
