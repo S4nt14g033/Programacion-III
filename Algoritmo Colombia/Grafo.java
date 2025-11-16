@@ -39,7 +39,7 @@ public class Grafo {
      */
     public void agregarArista(String origen, String destino, int peso) {
         listaAdyacencia.get(origen).add(new Arista(destino, peso)); // Agrega arista de origen a destino
-        listaAdyacencia.get(destino).add(new Arista(origen, peso)); // Agrega arista de destino a origen (bidireccional)
+        listaAdyacencia.get(destino).add(new Arista(origen, peso)); // Agrega arista de destino a origen (para grafo no dirigido)
     }
 
     /**
