@@ -56,7 +56,7 @@ public class Grafo {
      */
     public static class Arista {
         private String destino; // Nodo al que llega la arista
-        private int peso; // Costo de la arista (distancia)
+        private int peso; // Costo de la arista (distancia en km)
 
         /**
          * Crea una arista.
