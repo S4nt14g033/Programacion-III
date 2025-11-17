@@ -1,12 +1,12 @@
-// Clase Controlador maneja la lógica de la aplicación
-public class Controlador {
+// Clase ControladorInventario maneja la lógica de la aplicación
+public class ControladorInventario {
     // Atributos
-    private Inventario inventario;
-    private Vista vista;
+    private BaseDeDatos baseDatos;
+    private InventarioVista vista;
 
     // Constructor
-    public Controlador(Inventario inventario, Vista vista) {
-        this.inventario = inventario;
+    public ControladorInventario(BaseDeDatos baseDatos, InventarioVista vista) {
+        this.baseDatos = baseDatos;
         this.vista = vista;
     }
 
@@ -14,30 +14,28 @@ public class Controlador {
     public void iniciar() {
         boolean salir = false;
         while (!salir) {
-            vista.mostrarMenu();
-            int opcion = vista.leerOpcion();
+            int opcion = vista.mostrarMenu();
             switch (opcion) {
                 case 1:
                     // Agregar producto
-                    Producto producto = vista.leerProducto();
-                    inventario.agregarProducto(producto);
+                    Producto producto = vista.pedirDatosUsuario();
+                    baseDatos.agregarProducto(producto);
                     vista.mostrarMensaje("Producto agregado exitosamente.");
                     break;
                 case 2:
-                    // Mostrar productos
-                    vista.mostrarMensaje("Lista de productos:");
-                    inventario.mostrarProductos();
+                    // Buscar producto
+                    String skuBuscar = vista.pedirSku();
+                    Producto encontrado = baseDatos.buscarProductoSku(skuBuscar);
+                    vista.mostrarProducto(encontrado);
                     break;
                 case 3:
-                    // Buscar producto
-                    int idBuscar = vista.leerId();
-                    Producto encontrado = inventario.buscarProducto(idBuscar);
-                    vista.mostrarProducto(encontrado);
+                    // Mostrar todos los productos
+                    vista.mostrarProductos(baseDatos.buscarTodos());
                     break;
                 case 4:
                     // Eliminar producto
-                    int idEliminar = vista.leerId();
-                    boolean eliminado = inventario.eliminarProducto(idEliminar);
+                    String skuEliminar = vista.pedirSku();
+                    boolean eliminado = baseDatos.EliminarProducto(skuEliminar);
                     if (eliminado) {
                         vista.mostrarMensaje("Producto eliminado exitosamente.");
                     } else {
